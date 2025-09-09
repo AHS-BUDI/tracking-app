@@ -1,10 +1,12 @@
 module tracker
 
-go 1.25
+go 1.21
 
 require (
-	github.com/go-vgo/robotgo v0.110.8
+	github.com/go-vgo/robotgo v0.100.10
+	github.com/gofiber/fiber/v2 v2.50.0
 	github.com/lib/pq v1.10.9
+	github.com/robotn/gohook v0.40.0
 )
 
 require (

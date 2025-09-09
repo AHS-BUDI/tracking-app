@@ -5,10 +5,8 @@ import (
 	"fmt"
 	"log"
 	"os"
-	"time"
 	
 	_ "github.com/lib/pq"
-	"github.com/go-vgo/robotgo"
 )
 
 func main() {

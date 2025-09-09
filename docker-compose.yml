@@ -1,8 +1,8 @@
-version: '3.8'
+version: "3.8"
 
 services:
   db:
-    image: postgres:15-alpine
+    image: postgres:14-alpine
     container_name: tracker-postgres
     environment:
       POSTGRES_USER: ${DB_USER}
@@ -27,18 +27,19 @@ services:
       db:
         condition: service_healthy
     environment:
+      # Variabel database
       DB_HOST: ${DB_HOST}
       DB_PORT: ${DB_PORT}
       DB_USER: ${DB_USER}
       DB_PASSWORD: ${DB_PASSWORD}
       DB_NAME: ${DB_NAME}
+      # Variabel display untuk X11
+      DISPLAY: ${DISPLAY}
     ports:
       - "3000:3000"
     # Akses perangkat input (X11, keyboard, mouse)
     volumes:
       - /tmp/.X11-unix:/tmp/.X11-unix
-    environment:
-      - DISPLAY=${DISPLAY}
     # Akses devices
     devices:
       - /dev/input:/dev/input
